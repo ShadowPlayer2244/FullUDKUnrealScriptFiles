@@ -4,4 +4,4 @@ VampireGame
 Words with Dummies
 
 
-It's fucking great you should all bow down to it oh yes
+It's the bomb, oh yes.  You should totally play this superb game because it's great.  Oh yeah.  Not really it's bad
