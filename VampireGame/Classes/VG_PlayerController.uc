@@ -67,8 +67,7 @@ state PlayerWalking
 			GetAxes(CameraRotation, X, Y, Z);
 
 			// Update acceleration
-			NewAccel = PlayerInput.aStrafe * Y + PlayerInput.aForward * X;
-			NewAccel.Z = 0;
+			NewAccel = PlayerInput.aStrafe * Y + PlayerInput.aForward * Z;
 			NewAccel = Pawn.AccelRate * Normal(NewAccel);
 
 			// Set the desired rotation

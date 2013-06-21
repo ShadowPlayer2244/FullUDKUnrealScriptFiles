@@ -156,7 +156,7 @@ simulated function FaceRotation(Rotator NewRotation, float DeltaTime)
 	// Set the desired yaw the new rotation yaw
 	if (NewRotation.Yaw != 0)
 	{
-		DesiredYaw = NewRotation.Yaw;
+		DesiredYaw += NewRotation.Yaw;
 	}
 
 	// If the current yaw doesn't match the desired yaw, then interpolate towards it
