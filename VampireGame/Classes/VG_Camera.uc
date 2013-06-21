@@ -35,5 +35,5 @@ function UpdateViewTarget(out TViewTarget OutVT, float DeltaTime)
 
 defaultproperties
 {
-	CameraProperties=VG_CameraProperties'StarterPlatformGameContent.Archetypes.CameraProperties'
+	CameraProperties=VG_CameraProperties'VampireGameContent.Archetypes.CameraProperties'
 }

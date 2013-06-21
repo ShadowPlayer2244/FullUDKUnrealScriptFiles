@@ -73,9 +73,9 @@ defaultproperties
 	// What player controller class to create for the player
 	PlayerControllerClass=class'VG_PlayerController'
 	// What default pawn archetype to spawn for the player
-	DefaultPawnArchetype=VG_PlayerPawn'StarterPlatformGameContent.Archetypes.PlayerPawn'
+	DefaultPawnArchetype=VG_PlayerPawn'VampireGameContent.Archetypes.PlayerPawn'
 	// What default weapon archetype to spawn for the player
-	DefaultWeaponArchetype=VG_Weapon'StarterPlatformGameContent.Archetypes.LinkGunWeapon'
+	DefaultWeaponArchetype=VG_Weapon'VampireGameContent.Archetypes.LinkGunWeapon'
 	// What HUD class to create for the player
 	HUDType=class'VG_HUD'
 }
