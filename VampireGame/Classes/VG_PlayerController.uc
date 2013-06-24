@@ -25,9 +25,9 @@ function UpdateRotation(float DeltaTime)
 	// the rotation derived from the acceleration of the pawn
 	DeltaRot = DesiredRotation;
 	// Set the delta Yaw to read from the turn input
-	DeltaRot.Yaw = PlayerInput.aTurn;
+	DeltaRot.Yaw = 0;
 	// Never need to roll the delta rotation
-	DeltaRot.Roll = 0;
+	DeltaRot.Roll = PlayerInput.aTurn;
 
 	// Shake the camera if necessary
 	ViewShake(DeltaTime);

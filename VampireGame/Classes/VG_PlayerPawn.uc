@@ -142,64 +142,7 @@ simulated event Vector GetWeaponStartTraceLocation(optional Weapon CurrentWeapon
 	return Super.GetWeaponStartTraceLocation(CurrentWeapon);
 }
 
-/**
- * Handles updating the rotation of the pawn. This is where the pitch and yaw of the pawn is calculated.
- *
- * @param	NewRotation		New rotation that we wish to adjust the pawn to
- * @param	DeltaTime		Time slice since the last called FaceRotation. FaceRotation is usually called once per tick.
- * @network					Server and client
- */
-simulated function FaceRotation(Rotator NewRotation, float DeltaTime)
-{
-	local Rotator FacingRotation;
 
-	// Set the desired yaw the new rotation yaw
-	if (NewRotation.Yaw != 0)
-	{
-		DesiredYaw += NewRotation.Yaw;
-	}
-
-	// If the current yaw doesn't match the desired yaw, then interpolate towards it
-	if (CurrentYaw != DesiredYaw)
-	{
-		CurrentYaw = Lerp(CurrentYaw, DesiredYaw, TurnRate * DeltaTime);
-	}
-
-	// If we have a valid aim offset node
-	if (AimNode != None)
-	{
-		// Clamp the current pitch to the view pitch min and view pitch max
-		CurrentPitch = Clamp(CurrentPitch + NewRotation.Pitch, ViewPitchMin, ViewPitchMax);
-
-		if (CurrentPitch > 0.f)
-		{
-			// Handle when we're aiming up
-			AimNode.Aim.Y = float(CurrentPitch) / ViewPitchMax;
-		}
-		else if (CurrentPitch < 0.f)
-		{
-			// Handle when we're aiming down
-			AimNode.Aim.Y = float(CurrentPitch) / ViewPitchMin;
-			
-			if (AimNode.Aim.Y > 0.f)
-			{
-				AimNode.Aim.Y *= -1.f;
-			}
-		}
-		else
-		{
-			// Handle when we're aiming straight forward
-			AimNode.Aim.Y = 0.f;
-		}
-	}
-
-	// Update the facing rotation
-	FacingRotation.Pitch = 0;
-	FacingRotation.Yaw = CurrentYaw;
-	FacingRotation.Roll = 0;
-
-	SetRotation(FacingRotation);
-}
 
 /**
  * Appends to the Z velocity when the pawn wants to jump.

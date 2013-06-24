@@ -55,8 +55,10 @@
     <Folder Include="GFxUI\Classes\" />
     <Folder Include="IpDrv\" />
     <Folder Include="IpDrv\Classes\" />
+    <Folder Include="TEST" />
     <Folder Include="StarterPlatformGame\" />
     <Folder Include="StarterPlatformGame\Classes\" />
+    <Folder Include="TEST\Classes" />
     <Folder Include="VampireGame" />
     <Folder Include="OnlineSubsystemGameCenter\" />
     <Folder Include="OnlineSubsystemGameCenter\Classes\" />
