@@ -9,6 +9,9 @@ var float Speed;
 
 var float MinSize,MaxSize;
 
+var Rotator DRotation;
+
+
 
 function PostBeginPlay()
 {
@@ -33,6 +36,7 @@ function Tick(Float DeltaTime)
 	Super.Tick(DeltaTime);
 	
 	Velocity = Normal(Vector(Rotation))*Speed;
+	SetRotation(RinterpTo(Rotation,DRotation,DeltaTime * 16000 / RotationRate.Pitch,45000 ,true));
 }
 
 
@@ -64,7 +68,7 @@ function SetDest(AmbientCreatureNode inNode)
 	MoveOffset = Normal(VRand()) * inNode.Radius;
 
 	MoveDirection = (inNode.Location + MoveOffset) - Location;
-	DesiredRotation = Rotator(MoveDirection);
+	DRotation = Rotator(MoveDirection);
 
 	
 	
